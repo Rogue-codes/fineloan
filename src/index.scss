@@ -325,6 +325,9 @@ $textColor2:#204570;
       padding-bottom: 2%;
     }
     button{
+      @media (max-width:480px) {
+        font-size: 1.2rem;
+      }
       width: 30%;
       height: 8vh;
       font-size: 1.2vw;
