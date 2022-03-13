@@ -21,9 +21,8 @@ $textColor2:#204570;
   transition: all .5s linear;
   background: $mainColor;
   .logo{
-    width: 4%;
-    height: 10vh;
-    border: 1px solid $secondaryColor;
+    width:50px;
+    height: 50px;
     background: $secondaryColor;
     border-radius: 50%;
     img{
@@ -72,6 +71,10 @@ $textColor2:#204570;
 
 // hero section
 .hero{
+  @media (max-width:450px) {
+    flex-wrap: wrap;
+    padding: 4%;
+  }
   width: 100%;
   height: auto;
   display: flex;
@@ -79,16 +82,32 @@ $textColor2:#204570;
   padding: 2%;
   background-color: $mainColor;
   .left{
+    @media (max-width:450px) {
+      width: 90%;
+      margin-bottom: 8%;
+    }
     width: 50%;
     h1{
+      @media (max-width:450px) {
+        font-size: 2rem;
+        margin-bottom: 2%;
+      }
       font-size: 4vw;
       color: $textColor;
     }
     p{
+      @media (max-width:450px) {
+        font-size: 1.2rem;
+      }
       font-size: 1.5vw;
       color: $textColor;
     }
     button{
+      @media (max-width:450px) {
+        font-size: 1rem;
+        width: 60%;
+        border-radius: 5px;
+      }
       width: 40%;
       height: 10vh;
       font-size: 1.5vw;
@@ -105,6 +124,10 @@ $textColor2:#204570;
     }
   }
   .right{
+    @media (max-width:450px) {
+      width: 90%;
+      margin-bottom: 8%;
+    }
     width: 50%;
     height: auto;
   }
@@ -113,7 +136,11 @@ $textColor2:#204570;
 
 //form
 .form{
-  width: 60%;
+  @media (max-width:450px) {
+    width: 100%;
+    height: auto;
+  }
+  width: 80%;
   margin: auto;
   height: 90vh;
   background-color: #fff;
@@ -121,6 +148,9 @@ $textColor2:#204570;
   
   box-shadow: rgb(13, 235, 179, 0.4) 5px 5px, rgb(13, 235, 179, 0.3) 10px 10px, rgb(13, 235, 179, 0.2) 15px 15px, rgb(13, 235, 179, 0.1) 20px 20px, rgb(13, 235, 179, 0.05) 25px 25px;
   input{
+    @media (max-width:450px) {
+      font-size: 1rem;
+    }
     display: block;
     margin-top: 3%;
     margin-bottom: 3%;
@@ -135,21 +165,34 @@ $textColor2:#204570;
     }
   }
   label{
+    @media (max-width:450px) {
+      font-size: .8rem;
+    }
     color: rgb(32, 11, 100);
     font-size: 1.2vw;
   }
   h2{
+    @media (max-width:450px) {
+      font-size: 1.2rem;
+    }
     font-size: 1.8vw;
     color: $textColor2;
     text-align: center;
   }
   p{
+    @media (max-width:450px) {
+      font-size: .7rem;
+    }
     font-size: 1.2vw;
     color: #333;
     text-align: center;
     margin-bottom: 6%;
   }
   button{
+    @media (max-width:450px) {
+      font-size: 1rem;
+      border-radius: 5px;
+    }
     width: 40%;
     height: 10vh;
     font-size: 1.5vw;
@@ -169,6 +212,11 @@ $textColor2:#204570;
 
 // section1 starts
 .section1{
+  @media (max-width:450px) {
+    flex-wrap: wrap;
+    margin-top: 10%;
+    height: auto;
+  }
   width: 100%;
   height: 120vh;
   display: flex;
@@ -178,6 +226,11 @@ $textColor2:#204570;
   padding: 2%;
 
   .left{
+    @media (max-width:450px) {
+      width: 95%;
+      background-position: 50% 10%;
+      height: 50vh;
+    }
     width: 50%;
     height: 80vh;
     background: url('https://images.pexels.com/photos/1670045/pexels-photo-1670045.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500');
@@ -188,18 +241,33 @@ $textColor2:#204570;
     background-repeat: no-repeat;
   }
 .right{
+  @media (max-width:450px) {
+    width: 95%;
+  }
   width: 50%;
   height: 80vh;
   h1{
+    @media (max-width:450px) {
+      font-size: 2rem;;
+    }
     font-size: 2.5vw;
     color: $textColor2;
     padding-bottom: 2%;
   }
   p{
+    @media (max-width:450px) {
+      font-size: 1.2rem;;
+    }
     font-size: 1.5vw;
     color: $textColor2;
   }
   button{
+    @media (max-width:450px) {
+      font-size: 1.2rem;
+      width: 60%;
+      height: 8%;
+      border-radius: 5px;
+    }
     width: 40%;
     height: 10vh;
     font-size: 1.5vw;
@@ -246,6 +314,9 @@ $textColor2:#204570;
       transform: scaleX(1.02);
     }
     h3{
+      @media (max-width:450px) {
+        font-size: 2rem;;
+      }
       font-size: 2.5vw;
     }
     p{
@@ -355,6 +426,11 @@ $textColor2:#204570;
 
 // section3
 .section3{
+  @media (max-width:450px) {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 3%;
+  }
   width: 95%;
   margin: auto;
   height: 50vh;
@@ -372,29 +448,48 @@ $textColor2:#204570;
   gap: 10%;
   padding: 2%;
   .left{
+    @media (max-width:450px) {
+      width: 90%;
+      margin-bottom: 10%;
+    }
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     h1{
+      @media (max-width:450px) {
+        font-size: 2rem;
+      }
       color: $mainColor;
       font-size: 3vw;
     }
     h2{
       color: $secondaryColor;
       font-size: 5vw;
+      @media (max-width:450px) {
+        font-size: 2rem;
+      }
     }
   }
   .right{
+    @media (max-width:450px) {
+      width: 90%;
+    }
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     h1{
+      @media (max-width:450px) {
+        font-size: 2rem;
+      }
       color: $mainColor;
       font-size: 3vw;
     }
     h2{
+      @media (max-width:450px) {
+        font-size: 2rem;
+      }
       color: $secondaryColor;
       font-size: 5vw;
     }
@@ -412,6 +507,10 @@ $textColor2:#204570;
   justify-content: center;
   align-items: center;
   h1{
+    @media (max-width:450px) {
+      font-size: 2rem;
+      margin-top: 5%;
+    }
     font-size: 5vw;
     color: $textColor2;
   }
@@ -420,6 +519,9 @@ $textColor2:#204570;
 
 // section4
 .section4{
+  @media (max-width:450px) {
+    flex-wrap: wrap;
+  }
   width: 100%;
   height: auto;
   margin-top: 3%;
@@ -440,6 +542,11 @@ $textColor2:#204570;
       position: absolute;
       align-items: center;
     }
+    @media (max-width:450px) {
+      width: 90%;
+      margin: auto;
+      margin-bottom: 10%;
+    }
     position: relative;
     width: 30%;
     height: 50vh;
@@ -451,10 +558,16 @@ $textColor2:#204570;
     gap: 10%;
     padding: 2%;
     h1{
+      @media (max-width:450px) {
+        font-size: 2rem;
+      }
       font-size: 2vw;
       color: $textColor2;
     }
     p{
+      @media (max-width:450px) {
+        font-size: 1.2rem;;
+      }
       text-align: center;
       color: $textColor2;
       font-size: 1.3vw;
@@ -465,19 +578,27 @@ $textColor2:#204570;
 
 // footer
 footer{
+  @media (max-width:450px) {
+    flex-wrap: wrap;
+    height: auto;
+  }
   margin-top: 4%;
   width: 100%;
   display: flex;
   justify-content: space-between;
-  height: auto;
+  height: 90vh;
+  padding-top: 5%;
   background: $textColor2;
   padding: 2%;
   .left{
+    @media (max-width:450px) {
+      width: 90%;
+    }
     width: 30%;
     height: 100%;
     .logo{
-      width: 15%;
-      height: 10vh;
+      width: 50px;
+      height: 50px;
       border: 1px solid $secondaryColor;
       background: $secondaryColor;
       border-radius: 50%;
@@ -496,12 +617,19 @@ footer{
     }
   }
   .center{
+    @media (max-width:450px) {
+      width: 90%;
+      align-items: flex-start;
+    }
     width: 30%;
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     h1{
+      @media (max-width:450px) {
+        font-size: 1.2rem;
+      }
       font-size: 2vw;
       font-weight: 700;
       padding-bottom: 3%;
@@ -509,12 +637,19 @@ footer{
       text-align: center;
     }
     p{
+      @media (max-width:450px) {
+        font-size: 1rem;
+      }
       font-size: 1.8vw;
       color: $textColor;
     }
     ul{
       list-style-type: none;
       li{
+        @media (max-width:450px) {
+          font-size: .8rem;
+          margin-bottom: 15%;
+        }
         margin-top: 30%;
         color: $textColor;
         font-size: 1.3vw;
@@ -522,23 +657,39 @@ footer{
     }
   }
   .right{
+    @media (max-width:450px) {
+      width: 90%;
+      border-top: 1px solid rgb(192, 192, 192);
+      margin-top: 20%;
+      padding-bottom: 15%;
+    }
     width: 30%;
     height: 100%;
     display: flex;
     flex-direction: column;
     h1{
+      @media (max-width:450px) {
+        font-size: 2rem;;
+      }
       font-size: 2vw;
       padding-bottom: 3%;
       color: $textColor;
       text-align: center;
     }
     p{
+      @media (max-width:450px) {
+        font-size:1.2rem;
+        text-align: center;
+      }
       font-size: 1.2vw;
       padding-bottom: 3%;
       text-align: right;
       color: $textColor;
     }
     input{
+      @media (max-width:450px) {
+        height: 7vh;
+      }
       width: 80%;
       margin-left: 10%;
       height: 10vh;
@@ -552,6 +703,10 @@ footer{
       }
     }
     button{
+      @media (max-width:450px) {
+        font-size: .9rem;
+        height: 7vh;
+      }
       width: 80%;
       margin: auto;
       background: $secondaryColor;
