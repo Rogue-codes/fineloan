@@ -42,7 +42,7 @@ function Apply() {
     if(Object.keys(formError).length === 0 && isSubmit){
       console.log(val)
     }
-  },[formError])
+  },[formError,isSubmit,val])
 
   const validate = (values) => {
     const errrors = {}
