@@ -1,20 +1,23 @@
 import React, { useState } from 'react'
+import { useTransition, animated } from 'react-spring'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; 
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import {Link} from "react-router-dom";
 
 function Form() {
     const [Amount, setAmount] = useState(0)
     const [duration, setDuration] = useState(0)
     const [amountPayable, setAmountPayable] = useState(0)
-
-    console.log(Amount)
-    
+    const [warn, setWarn] = useState(false)  
+    const [showamount, setShowAmount] = useState(false) 
     const calculate = (e) => {
         e.preventDefault()
 
         if(Amount <= 0 || duration <= 0 ){
-          alert('All fields must be filled')
+          setWarn(true)
           return
         }else if(duration > 12){
-          alert('Maximum loan period is for 12 months')
+          setWarn(true)
         }
         else{
           const interest = 10
@@ -29,8 +32,53 @@ function Form() {
           
   
           setAmountPayable(mainTotal.toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
+
+          setShowAmount(true)
         }
     }
+
+    const masked = useTransition(warn, {
+      from: { opacity: 0 },
+      enter: { opacity: 1 },
+      leave: { opacity: 0 },
+      reverse: warn,
+      delay: 200,
+      // config: config.molasses,
+      // onRest: () => set(!show),
+    })
+
+    const maskTransitions = useTransition(warn, {
+      from: { opacity: 0 },
+      enter: { opacity: 1 },
+      leave: { opacity: 0 },
+      reverse: warn,
+      delay: 200,
+      // config: config.molasses,
+      // onRest: () => set(!show),
+    })
+
+    const maskedAmount = useTransition(showamount, {
+      from: { opacity: 0 },
+      enter: { opacity: 1 },
+      leave: { opacity: 0 },
+      reverse: showamount,
+      delay: 200,
+      // config: config.molasses,
+      // onRest: () => set(!show),
+    })
+
+    const showMaskedAmount = useTransition(showamount, {
+      from: { opacity: 0 },
+      enter: { opacity: 1 },
+      leave: { opacity: 0 },
+      reverse: showamount,
+      delay: 200,
+      // config: config.molasses,
+      // onRest: () => set(!show),
+    })
+
+    console.log(Amount)
+
   return (
     <div>
         <form action="" className='form'>
@@ -52,8 +100,50 @@ function Form() {
 
             <button onClick={calculate}>Calculate</button>
             <br />
-            <p>you're to pay:   ₦{amountPayable}</p>
         </form>
+        {
+            masked(
+            (styles, item) => item && <animated.div style={styles} className='firstAnimate' onClick={()=> setWarn(false)}>
+              
+            </animated.div>
+            )
+        }
+
+        {
+            maskTransitions(
+            (styles, item) => item && <animated.div style={styles} className='Animated' onClick={()=> setWarn(false)}>
+              <span><FontAwesomeIcon className='cancel' icon={faTimes} onClick ={ () => setWarn(false) } style={{color:'red'}} size="xl"></FontAwesomeIcon></span>
+                <h2>error!!</h2>
+                <p>Form isn't filled correctly</p>
+                <ul>
+                  <li>Ensure that all  fields are correctly filled </li>
+                  <li>Enter a valid Loan amount that is between ₦0 and ₦6m</li>
+                  <li>Maximun loan duration is 12 months</li>
+                </ul>
+            </animated.div>
+            )
+        }   
+
+        {
+            maskedAmount(
+            (styles, item) => item && <animated.div style={styles} className='firstAnimate' onClick={()=> setShowAmount(false)}>
+              
+            </animated.div>
+            )
+        }
+
+        {
+            showMaskedAmount(
+            (styles, item) => item && <animated.div style={styles} className='Animated2' onClick={()=> setShowAmount(false)}>
+              <span><FontAwesomeIcon className='cancel' icon={faTimes} onClick ={ () => setWarn(false) } style={{color:'#0272ff'}} size="xl"></FontAwesomeIcon></span>
+              <h2>Dear user</h2>
+              <p>you're trying to access a loan of <b>₦{Amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</b></p>
+              <p>For a period of <b>{duration}months</b></p>
+              <p className='pay'>You're expected to pay back:  <b>₦{amountPayable}</b></p>
+              <p>to carry on with your request please click on this <Link to='/apply'>Link</Link>.</p>
+            </animated.div>
+            )
+        }
     </div>
   )
 }

@@ -49,7 +49,7 @@ function Home() {
           
           <div className="gridItem">
             <h3>Student Loan</h3>
-            <p> We believe in you and that's why we willing to help you get that degree youve been hoping for</p>
+            <p> We believe in you and that's why we willing to help you get that degree you've been hoping for</p>
             <Link to='/loan'><button>View</button></Link>
           </div>
           <div className="gridItem">

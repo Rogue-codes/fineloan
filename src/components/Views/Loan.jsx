@@ -10,9 +10,17 @@ function Loan() {
     <div className='loan'>
       <Nav/>
       <div className="top">
-        <h1>We provide loan for the Average African</h1>
-        <p>Apply for your business loan in minutes with no hassle</p>
+        <div className="left">
+          <h1>We provide loan for the Average African</h1>
+          <p>Apply for your business loan in minutes with no hassle</p>
+        </div>
+
+        <div className="right">
+
+        </div>
+        
       </div>
+
 
       <div className="cate">
         <h1>LOAN CATEGORIES</h1>  
