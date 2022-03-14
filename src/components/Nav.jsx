@@ -41,9 +41,11 @@ function Nav() {
     window.addEventListener('scroll', changeBg)
   return (
     <nav className={bg ? 'nav active' : 'nav'}>
-        <div className="logo">
-            <img src="/logo.png" alt="" />    
-        </div>
+        <Link to='/'>
+            <div className="logo">
+                <img src="/logo.png" alt="" />    
+            </div>
+        </Link>
 
         <div className="links">
             <Link to='/'>Home</Link>

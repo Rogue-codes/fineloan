@@ -26,6 +26,7 @@ $textColor2:#204570;
     color: white;
     @media (max-width:450px) {
       display: block;
+      padding-right: 4%;
     }
   }
   .logo{
@@ -815,8 +816,9 @@ footer{
   @media (max-width:450px) {
     width: 90%;
     left: 5%;
-    padding: 5%;
+    padding-left: 8%;
     gap: 2%;
+    align-items: flex-start;
   }
   position: fixed !important;
   position: relative;
@@ -834,21 +836,21 @@ footer{
   align-items: center;
   h2{
     @media (max-width:450px) {
-      font-size: 1.2rem;
+      font-size: 1.5rem;
     }
     color: red;
     font-size: 3vw;
   }
   p{
     @media (max-width:450px) {
-      font-size: .9rem;
+      font-size: 1.2rem;
     }
     color: red;
     font-size: 1.2vw;
   }
   li{
     @media (max-width:450px) {
-      font-size: .8rem;
+      font-size: 1rem;
     }
     padding-bottom: 3%;
     color: red;
