@@ -20,7 +20,7 @@ function Form() {
           setWarn(true)
         }
         else{
-          const interest = 10
+          const interest = 5
 
           const monthlyInterest = interest/100
   
@@ -95,7 +95,7 @@ function Form() {
             />
 
             <label htmlFor="">Interest rate</label>
-            <input type="number" value={10} 
+            <input type="number" value={5} 
              />
 
             <button onClick={calculate}>Calculate</button>
@@ -115,11 +115,9 @@ function Form() {
               <span><FontAwesomeIcon className='cancel' icon={faTimes} onClick ={ () => setWarn(false) } style={{color:'red'}} size="xl"></FontAwesomeIcon></span>
                 <h2>error!!</h2>
                 <p>Form isn't filled correctly</p>
-                <ul>
-                  <li>Ensure that all  fields are correctly filled </li>
-                  <li>Enter a valid Loan amount that is between ₦0 and ₦6m</li>
-                  <li>Maximun loan duration is 12 months</li>
-                </ul>
+                  <p>Ensure that all  fields are correctly filled </p>
+                  <p>Enter a vapd Loan amount that is between ₦0 and ₦6m</p>
+                  <p>Maximun loan duration is 12 months</p>
             </animated.div>
             )
         }   
