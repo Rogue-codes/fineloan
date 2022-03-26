@@ -11,9 +11,9 @@ function Form() {
     const [warn, setWarn] = useState(false)  
     const [showamount, setShowAmount] = useState(false) 
     const calculate = (e) => {
-        e.preventDefault()
+        e.preventDefault() /* prevent reloading when the submit button is clicked*/
 
-        if(Amount <= 0 || duration <= 0 ){
+        if(Amount <= 0 || duration <= 0 || Amount > 6000000 ){
           setWarn(true)
           return
         }else if(duration > 12){
